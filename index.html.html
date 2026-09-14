@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>邱老師的美術小宇宙｜國小高年級美術</title>
+  <meta name="description" content="邱老師的國小高年級美術教學網站，分享課程資訊、作品欣賞與創作靈感。">
+  <style>
+    :root{
+      --ink:#29323a;
+      --paper:#fffdf7;
+      --cream:#f7f0df;
+      --yellow:#ffd75e;
+      --coral:#f58b72;
+      --blue:#79b9c9;
+      --green:#9bbb82;
+      --purple:#a795c7;
+      --line:#e7dfcf;
+      --shadow:0 14px 35px rgba(72,58,37,.10);
+      --radius:24px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at 10% 10%, rgba(255,215,94,.20) 0 80px, transparent 81px),
+        radial-gradient(circle at 90% 25%, rgba(121,185,201,.16) 0 100px, transparent 101px),
+        var(--paper);
+      font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+      line-height:1.75;
+    }
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1100px,92%);margin:auto}
+    header{
+      position:sticky;top:0;z-index:10;
+      backdrop-filter:blur(14px);
+      background:rgba(255,253,247,.88);
+      border-bottom:1px solid rgba(231,223,207,.8);
+    }
+    nav{height:68px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{font-weight:900;letter-spacing:.08em;display:flex;align-items:center;gap:10px}
+    .logo{
+      width:40px;height:40px;border-radius:13px;
+      background:var(--yellow);
+      display:grid;place-items:center;
+      transform:rotate(-5deg);
+      box-shadow:3px 4px 0 #e7b83e;
+    }
+    .navlinks{display:flex;gap:22px;font-size:.95rem;font-weight:700}
+    .navlinks a:hover{color:#d76550}
+    .hero{padding:78px 0 65px;overflow:hidden}
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:55px}
+    .eyebrow{
+      display:inline-block;padding:6px 13px;border-radius:999px;
+      background:#eef5e9;color:#527342;font-weight:800;font-size:.85rem;
+    }
+    h1{font-size:clamp(2.7rem,7vw,5.4rem);line-height:1.05;margin:18px 0 20px;letter-spacing:-.04em}
+    h1 span{display:block;color:#d66e58}
+    .lead{font-size:1.13rem;color:#58636b;max-width:650px}
+    .buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:12px 20px;border-radius:999px;font-weight:900;
+      border:2px solid var(--ink);box-shadow:4px 5px 0 var(--ink);
+      transition:.18s;
+    }
+    .btn:hover{transform:translate(2px,2px);box-shadow:2px 3px 0 var(--ink)}
+    .btn.primary{background:var(--yellow)}
+    .btn.secondary{background:white}
+    .artboard{
+      min-height:390px;position:relative;border-radius:42% 58% 55% 45% / 48% 42% 58% 52%;
+      background:#f3dfaa;box-shadow:var(--shadow);
+      transform:rotate(2deg);overflow:hidden;
+    }
+    .sun{position:absolute;width:110px;height:110px;border-radius:50%;background:var(--yellow);right:13%;top:11%}
+    .mountain{position:absolute;bottom:0;left:0;width:100%;height:58%;background:var(--green);clip-path:polygon(0 75%,20% 34%,36% 62%,55% 18%,75% 58%,100% 25%,100% 100%,0 100%)}
+    .mountain2{position:absolute;bottom:0;left:0;width:100%;height:44%;background:#719e91;clip-path:polygon(0 65%,18% 42%,32% 67%,50% 30%,70% 65%,85% 45%,100% 70%,100% 100%,0 100%);opacity:.8}
+    .brush{position:absolute;left:13%;top:15%;font-size:4.8rem;transform:rotate(-18deg)}
+    .paint-dot{position:absolute;border-radius:50%;filter:blur(.2px)}
+    .dot1{width:30px;height:30px;background:var(--coral);left:25%;bottom:23%}
+    .dot2{width:18px;height:18px;background:var(--purple);right:27%;bottom:19%}
+    .dot3{width:13px;height:13px;background:var(--blue);right:15%;top:42%}
+    section{padding:76px 0}
+    .section-title{margin-bottom:34px}
+    .section-title small{font-weight:900;color:#d66e58;letter-spacing:.1em}
+    .section-title h2{font-size:2.2rem;margin:4px 0}
+    .section-title p{color:#68727a;margin:0}
+    .about{display:grid;grid-template-columns:.8fr 1.2fr;gap:28px}
+    .card{
+      background:white;border:1px solid var(--line);border-radius:var(--radius);
+      padding:28px;box-shadow:var(--shadow);
+    }
+    .profile-card{background:#f6efdd;position:relative;overflow:hidden}
+    .avatar{
+      width:110px;height:110px;border-radius:50%;background:var(--coral);
+      display:grid;place-items:center;font-size:3.2rem;margin-bottom:18px;
+      border:5px solid white;box-shadow:4px 5px 0 rgba(41,50,58,.18)
+    }
+    .profile-card:after{content:"✦";position:absolute;font-size:8rem;color:rgba(255,255,255,.35);right:-10px;bottom:-35px}
+    .values{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}
+    .value{padding:18px;border-radius:18px;background:#fffdf7;border:1px dashed #d7ccb7}
+    .value b{display:block;margin-bottom:5px}
+    .courses{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .course{min-height:190px;position:relative;overflow:hidden}
+    .course:nth-child(1){background:#fff5c9}.course:nth-child(2){background:#e6f3f5}.course:nth-child(3){background:#eee8f5}
+    .course-icon{font-size:2.3rem}
+    .course h3{margin:8px 0 4px}
+    .tag{display:inline-block;font-size:.78rem;font-weight:900;padding:3px 9px;border-radius:999px;background:white;margin-top:10px}
+    .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .info-item{padding:20px;background:#fff;border:1px solid var(--line);border-radius:18px}
+    .info-item strong{display:block;font-size:.95rem;color:#7b5d43}
+    .notice{border-left:7px solid var(--coral);background:#fff4ef}
+    .future{
+      background:var(--ink);color:white;border-radius:34px;padding:45px;
+      position:relative;overflow:hidden;
+    }
+    .future p{color:#dbe1e5;max-width:720px}
+    .future-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+    .future-list span{padding:9px 14px;border:1px solid #5d6871;border-radius:999px}
+    footer{padding:35px 0 50px;color:#78828a;text-align:center;font-size:.9rem}
+    @media(max-width:800px){
+      .navlinks{display:none}
+      .hero-grid,.about,.info-grid{grid-template-columns:1fr}
+      .courses{grid-template-columns:1fr}
+      .hero{padding-top:55px}
+      .artboard{min-height:300px}
+      .values{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <nav>
+      <a class="brand" href="#top"><span class="logo">🎨</span>邱老師的美術小宇宙</a>
+      <div class="navlinks">
+        <a href="#about">關於老師</a>
+        <a href="#courses">課程</a>
+        <a href="#info">課程資訊</a>
+        <a href="#future">未來藍圖</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">ELEMENTARY ART · 高年級美術</span>
+        <h1>讓孩子<br><span>畫出自己的世界。</span></h1>
+        <p class="lead">
+          嗨，我是邱老師。這裡是一座給孩子的創作基地——
+          我相信美術不只是「畫得像不像」，更重要的是敢不敢想、能不能說，
+          以及願不願意把心裡那個獨一無二的世界畫出來。
+        </p>
+        <div class="buttons">
+          <a class="btn primary" href="#courses">看看我的課程 ↓</a>
+          <a class="btn secondary" href="#info">家長課程資訊</a>
+        </div>
+      </div>
+      <div class="artboard" aria-label="抽象山景與畫筆的美術插畫">
+        <div class="sun"></div>
+        <div class="brush">🖌️</div>
+        <div class="paint-dot dot1"></div>
+        <div class="paint-dot dot2"></div>
+        <div class="paint-dot dot3"></div>
+        <div class="mountain"></div>
+        <div class="mountain2"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <div class="section-title">
+        <small>01 · ABOUT</small>
+        <h2>關於邱老師</h2>
+        <p>一位陪孩子把「我覺得」變成「我創作」的美術老師。</p>
+      </div>
+      <div class="about">
+        <div class="card profile-card">
+          <div class="avatar">邱</div>
+          <h3>邱老師</h3>
+          <p>國小高年級美術教師</p>
+          <p>擅長引導孩子觀察、想像、構圖與表達，讓每一幅作品都有自己的故事。</p>
+        </div>
+        <div class="card">
+          <h3>我的教學理念 ✦</h3>
+          <p>
+            我希望美術課不是「老師畫一步、學生跟一步」，而是一場小小的冒險。
+            從生活觀察開始，經過發想、嘗試、修改，最後完成屬於自己的作品。
+          </p>
+          <div class="values">
+            <div class="value"><b>👀 觀察</b>看見平常容易忽略的細節。</div>
+            <div class="value"><b>💡 想像</b>把「不可能」變成創作點子。</div>
+            <div class="value"><b>🌱 成長</b>學會欣賞自己，也欣賞別人的作品。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="courses">
+    <div class="container">
+      <div class="section-title">
+        <small>02 · COURSES</small>
+        <h2>高年級美術課程</h2>
+        <p>先從三個核心方向開始，之後可以依學校課程逐步擴充。</p>
+      </div>
+      <div class="courses">
+        <article class="card course">
+          <div class="course-icon">🖼️</div>
+          <h3>繪畫創作</h3>
+          <p>構圖、色彩、明暗、視覺焦點與主題發想，練習把腦中的畫面變成作品。</p>
+          <span class="tag">觀察 × 想像</span>
+        </article>
+        <article class="card course">
+          <div class="course-icon">✂️</div>
+          <h3>平面設計</h3>
+          <p>從海報、標誌到主題設計，學習文字、圖像與版面如何一起說故事。</p>
+          <span class="tag">設計 × 表達</span>
+        </article>
+        <article class="card course">
+          <div class="course-icon">🪵</div>
+          <h3>版畫與複合媒材</h3>
+          <p>體驗不同媒材的質感與痕跡，從「一次完成」走向「實驗與變化」。</p>
+          <span class="tag">實驗 × 創造</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="info">
+    <div class="container">
+      <div class="section-title">
+        <small>03 · CLASS INFO</small>
+        <h2>課程資訊</h2>
+        <p>目前先放最必要的資訊，未來可直接升級成親師互動中心。</p>
+      </div>
+      <div class="info-grid">
+        <div class="info-item"><strong>🎒 適用年級</strong>國小五、六年級</div>
+        <div class="info-item"><strong>⏰ 上課時間</strong>依學校課表安排（可再填入實際節次）</div>
+        <div class="info-item"><strong>🧰 課堂材料</strong>依單元準備繪畫工具、色紙、版畫材料等</div>
+        <div class="info-item"><strong>📌 課程提醒</strong>請依老師公告攜帶當週指定材料與作品</div>
+      </div>
+      <div class="card notice" style="margin-top:18px">
+        <strong>📣 本週小提醒</strong>
+        <p style="margin-bottom:0">這裡未來可以放「作業繳交」、「材料提醒」、「課程公告」等重要訊息。</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="future">
+    <div class="container">
+      <div class="future">
+        <div class="section-title" style="margin-bottom:10px">
+          <small style="color:#ffd75e">04 · NEXT STEP</small>
+          <h2 style="color:white">這座網站，還可以長大。</h2>
+        </div>
+        <p>
+          第一階段先做成乾淨、好閱讀的「老師名片＋課程入口」；
+          第二階段再加入親師互動與學生作品展示，讓網站慢慢變成一個真正的數位美術教室。
+        </p>
+        <div class="future-list">
+          <span>📢 班級公告</span>
+          <span>📚 單元教材</span>
+          <span>🖼️ 學生作品牆</span>
+          <span>📅 課程行事曆</span>
+          <span>👨‍👩‍👧 親師溝通</span>
+          <span>📝 線上回饋</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">© 邱老師的美術小宇宙 · 讓每一種想法，都有被畫下來的機會。</div>
+</footer>
+</body>
+</html>
